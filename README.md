@@ -35,26 +35,25 @@ cd todo-backend
 \`\`\`
 
 2. Crear un entorno virtual:
-\`\`\`bash
+bash
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\\Scripts\\activate
-\`\`\`
+
 
 3. Instalar dependencias:
-\`\`\`bash
+bash
 pip install -r requirements.txt
-\`\`\`
+
 
 4. Configurar PostgreSQL local:
-\`\`\`bash
+bash
 # Crear base de datos
 createdb todoapp
-\`\`\`
 
-5. Ejecutar la aplicación:
-\`\`\`bash
+
+bash
 python app.py
-\`\`\`
+
 
 La API estará disponible en \`http://localhost:5000\`
  Despliegue en Render
@@ -73,28 +72,28 @@ La API estará disponible en \`http://localhost:5000\`
 ##  Ejemplos de uso
 
 ### Crear una tarea
-\`\`\`bash
+
 curl -X POST https://todo-api-jtw8.onrender.com/tasks \\
   -H "Content-Type: application/json" \\
   -d '{"title": "Completar proyecto", "done": false}'
-\`\`\`
+
 
 ### Obtener todas las tareas
-\`\`\`bash
+h
 curl https://todo-api-jtw8.onrender.comtasks
-\`\`\`
+
 
 ### Actualizar una tarea
-\`\`\`bash
+
 curl -X PUThttps://todo-api-jtw8.onrender.com/1 \\
   -H "Content-Type: application/json" \\
   -d '{"done": true}'
-\`\`\`
+
 
 ### Eliminar una tarea
-\`\`\`bash
+
 curl -X DELETE https://todo-api-jtw8.onrender.coms/1
-\`\`\`
+
 
 ##  Estructura del proyecto
 
