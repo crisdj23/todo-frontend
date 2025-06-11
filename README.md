@@ -29,29 +29,29 @@ Una API RESTful para gestionar tareas (To-Do List) construida con Flask, Peewee 
 ### Pasos
 
 1. Clonar el repositorio:
-\`\`\`bash
+
 git clone <tu-repositorio>
 cd todo-backend
-\`\`\`
+
 
 2. Crear un entorno virtual:
-bash
+
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\\Scripts\\activate
 
 
 3. Instalar dependencias:
-bash
+
 pip install -r requirements.txt
 
 
 4. Configurar PostgreSQL local:
-bash
+
 # Crear base de datos
 createdb todoapp
 
 
-bash
+
 python app.py
 
 
@@ -73,26 +73,26 @@ La API estará disponible en \`http://localhost:5000\`
 
 ### Crear una tarea
 
-curl -X POST https://todo-api-jtw8.onrender.com/tasks \\
+ POST https://todo-api-jtw8.onrender.com/tasks \\
   -H "Content-Type: application/json" \\
   -d '{"title": "Completar proyecto", "done": false}'
 
 
 ### Obtener todas las tareas
-h
-curl https://todo-api-jtw8.onrender.comtasks
+
+ https://todo-api-jtw8.onrender.comtasks
 
 
 ### Actualizar una tarea
 
-curl -X PUThttps://todo-api-jtw8.onrender.com/1 \\
+ PUThttps://todo-api-jtw8.onrender.com/1 \\
   -H "Content-Type: application/json" \\
   -d '{"done": true}'
 
 
 ### Eliminar una tarea
 
-curl -X DELETE https://todo-api-jtw8.onrender.coms/1
+ DELETE https://todo-api-jtw8.onrender.coms/1
 
 
 ##  Estructura del proyecto
@@ -262,3 +262,4 @@ Si encuentras algún problema:
 ##  Licencia
 
 Este proyecto está bajo la Licencia MIT.
+
