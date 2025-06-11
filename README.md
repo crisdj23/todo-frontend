@@ -2,7 +2,7 @@
 
 Una API RESTful para gestionar tareas (To-Do List) construida con Flask, Peewee ORM y PostgreSQL.
 
-## 🚀 Características
+ Características
 
 - API RESTful completa con operaciones CRUD
 - Base de datos PostgreSQL con Peewee ORM
@@ -10,7 +10,7 @@ Una API RESTful para gestionar tareas (To-Do List) construida con Flask, Peewee 
 - Desplegable en Render
 - Endpoints de salud para monitoreo
 
-## 📋 Endpoints
+ Endpoints
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
@@ -20,7 +20,7 @@ Una API RESTful para gestionar tareas (To-Do List) construida con Flask, Peewee 
 | DELETE | `/tasks/<id>` | Eliminar una tarea |
 | GET | `/health` | Verificar estado de la API |
 
-## 🛠️ Instalación Local
+ Instalación Local
 
 ### Prerrequisitos
 - Python 3.8+
@@ -57,8 +57,7 @@ python app.py
 \`\`\`
 
 La API estará disponible en \`http://localhost:5000\`
-
-## 🌐 Despliegue en Render
+ Despliegue en Render
 
 ### Pasos para desplegar:
 
@@ -71,43 +70,43 @@ La API estará disponible en \`http://localhost:5000\`
 ### Variables de entorno necesarias:
 - \`DATABASE_URL\`: URL de conexión a PostgreSQL (proporcionada por Render)
 
-## 📝 Ejemplos de uso
+##  Ejemplos de uso
 
 ### Crear una tarea
 \`\`\`bash
-curl -X POST https://tu-api.onrender.com/tasks \\
+curl -X POST https://todo-api-jtw8.onrender.com/tasks \\
   -H "Content-Type: application/json" \\
   -d '{"title": "Completar proyecto", "done": false}'
 \`\`\`
 
 ### Obtener todas las tareas
 \`\`\`bash
-curl https://tu-api.onrender.com/tasks
+curl https://todo-api-jtw8.onrender.comtasks
 \`\`\`
 
 ### Actualizar una tarea
 \`\`\`bash
-curl -X PUT https://tu-api.onrender.com/tasks/1 \\
+curl -X PUThttps://todo-api-jtw8.onrender.com/1 \\
   -H "Content-Type: application/json" \\
   -d '{"done": true}'
 \`\`\`
 
 ### Eliminar una tarea
 \`\`\`bash
-curl -X DELETE https://tu-api.onrender.com/tasks/1
+curl -X DELETE https://todo-api-jtw8.onrender.coms/1
 \`\`\`
 
-## 🔧 Estructura del proyecto
+##  Estructura del proyecto
 
 \`\`\`
 todo-backend/
-├── app.py              # Aplicación Flask principal
-├── models.py           # Modelos de base de datos
-├── requirements.txt    # Dependencias Python
-└── README.md          # Documentación
+├─ app.py              # Aplicación Flask principal
+├─ models.py           # Modelos de base de datos
+├─ requirements.txt    # Dependencias Python
+└─ README.md          # Documentación
 \`\`\`
 
-## 🤝 Contribuir
+ Contribuir
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (\`git checkout -b feature/AmazingFeature\`)
@@ -115,7 +114,7 @@ todo-backend/
 4. Push a la rama (\`git push origin feature/AmazingFeature\`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+Licencia
 
 Este proyecto está bajo la Licencia MIT.
 
@@ -125,7 +124,7 @@ Este proyecto está bajo la Licencia MIT.
 
 Una interfaz web moderna y responsiva para gestionar tareas (To-Do List) construida con HTML, CSS, JavaScript puro y Bootstrap 5.
 
-## 🚀 Características
+ Características
 
 - Interfaz moderna y responsiva con Bootstrap 5
 - Operaciones CRUD completas (Crear, Leer, Actualizar, Eliminar)
@@ -136,7 +135,8 @@ Una interfaz web moderna y responsiva para gestionar tareas (To-Do List) constru
 - Animaciones suaves y efectos hover
 - Compatible con dispositivos móviles
 
-## 🛠️ Tecnologías utilizadas
+
+ Tecnologías utilizadas
 
 - HTML5
 - CSS3 (con animaciones y gradientes)
@@ -144,7 +144,8 @@ Una interfaz web moderna y responsiva para gestionar tareas (To-Do List) constru
 - Bootstrap 5.3.0
 - Font Awesome 6.0.0
 
-## 📋 Funcionalidades
+
+ Funcionalidades
 
 - ✅ Agregar nuevas tareas
 - ✅ Marcar tareas como completadas/pendientes
@@ -155,29 +156,28 @@ Una interfaz web moderna y responsiva para gestionar tareas (To-Do List) constru
 - ✅ Mensajes de error y éxito
 - ✅ Validación de formularios
 
-## 🌐 Configuración
+ Configuración
 
 ### Configurar la URL de la API
 
 Antes de usar la aplicación, debes configurar la URL de tu API backend en el archivo \`script.js\`:
 
 \`\`\`javascript
-const API_BASE_URL = 'https://tu-api.onrender.com'; // Cambia esto por tu URL de Render
-\`\`\`
+const API_BASE_URL = 'https://todo-api-jtw8.onrender.com'; //
 
-### Estructura de archivos
+Estructura de archivos
 
-\`\`\`
+
 todo-frontend/
 ├── index.html          # Página principal
 ├── styles.css          # Estilos personalizados
 ├── script.js           # Lógica de la aplicación
 └── README.md          # Documentación
-\`\`\`
 
-## 🚀 Despliegue en GitHub Pages
 
-### Pasos para desplegar:
+ Despliegue en GitHub Pages
+
+ Pasos para desplegar:
 
 1. **Crear un repositorio en GitHub:**
    - Ve a [GitHub](https://github.com) y crea un nuevo repositorio
@@ -186,7 +186,7 @@ todo-frontend/
 
 2. **Subir los archivos:**
    \`\`\`bash
-   git clone https://github.com/tu-usuario/todo-frontend.git
+   git clone https://crisdj23.github.io/todo-frontend
    cd todo-frontend
    # Copia todos los archivos del frontend aquí
    git add .
@@ -202,16 +202,16 @@ todo-frontend/
    - Haz clic en "Save"
 
 4. **Acceder a tu aplicación:**
-   - Tu aplicación estará disponible en: \`https://tu-usuario.github.io/todo-frontend\`
+   - Tu aplicación estará disponible en: \`https://crisdj23.github.io/todo-frontend`
 
-## 📱 Uso de la aplicación
+##  Uso de la aplicación
 
 1. **Agregar tarea:** Escribe en el campo de texto y presiona "Agregar" o Enter
 2. **Completar tarea:** Haz clic en el checkbox para marcar como completada
 3. **Eliminar tarea:** Haz clic en el ícono de basura y confirma la eliminación
 4. **Ver estadísticas:** El contador muestra tareas totales, completadas y pendientes
 
-## 🎨 Personalización
+##  Personalización
 
 ### Cambiar colores
 Puedes personalizar los colores editando las variables CSS en \`styles.css\`:
@@ -234,7 +234,7 @@ async function editTask(taskId, newTitle) {
 }
 \`\`\`
 
-## 🔧 Desarrollo local
+##  Desarrollo local
 
 Para probar la aplicación localmente:
 
@@ -243,7 +243,7 @@ Para probar la aplicación localmente:
 3. Asegúrate de que tu API backend esté ejecutándose
 4. Configura la URL correcta en \`script.js\`
 
-## 📞 Soporte
+## Soporte
 
 Si encuentras algún problema:
 
@@ -252,7 +252,7 @@ Si encuentras algún problema:
 3. Asegúrate de que el backend esté funcionando
 4. Verifica que CORS esté habilitado en el backend
 
-## 🤝 Contribuir
+##  Contribuir
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (\`git checkout -b feature/AmazingFeature\`)
@@ -260,6 +260,6 @@ Si encuentras algún problema:
 4. Push a la rama (\`git push origin feature/AmazingFeature\`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto está bajo la Licencia MIT.
