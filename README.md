@@ -73,7 +73,7 @@ La API estará disponible en \`http://localhost:5000\`
 
 ### Crear una tarea
 
- POST https://todo-api-jtw8.onrender.com/tasks \\
+  https://todo-api-jtw8.onrender.com/tasks \\
   -H "Content-Type: application/json" \\
   -d '{"title": "Completar proyecto", "done": false}'
 
@@ -85,7 +85,7 @@ La API estará disponible en \`http://localhost:5000\`
 
 ### Actualizar una tarea
 
- PUThttps://todo-api-jtw8.onrender.com/1 \\
+ https://todo-api-jtw8.onrender.com/1 \\
   -H "Content-Type: application/json" \\
   -d '{"done": true}'
 
@@ -99,10 +99,10 @@ La API estará disponible en \`http://localhost:5000\`
 
 \`\`\`
 todo-backend/
-├─ app.py              # Aplicación Flask principal
-├─ models.py           # Modelos de base de datos
-├─ requirements.txt    # Dependencias Python
-└─ README.md          # Documentación
+├── app.py              # Aplicación Flask principal
+├── models.py           # Modelos de base de datos
+├── requirements.txt    # Dependencias Python
+└── README.md          # Documentación
 \`\`\`
 
  Contribuir
@@ -262,4 +262,3 @@ Si encuentras algún problema:
 ##  Licencia
 
 Este proyecto está bajo la Licencia MIT.
-
