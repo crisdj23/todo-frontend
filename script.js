@@ -83,10 +83,12 @@ function renderTasks(tasks) {
 
   if (tasks.length === 0) {
     emptyState.classList.remove("d-none")
+    document.getElementById("statsContainer").classList.add("d-none")
     return
   }
 
   emptyState.classList.add("d-none")
+  document.getElementById("statsContainer").classList.remove("d-none")
 
   tasks.forEach((task) => {
     const taskElement = createTaskElement(task)
@@ -100,24 +102,26 @@ function renderTasks(tasks) {
 // Crear elemento HTML para una tarea
 function createTaskElement(task) {
   const taskDiv = document.createElement("div")
-  taskDiv.className = `task-item p-3 d-flex align-items-center fade-in ${task.done ? "completed" : ""}`
+  taskDiv.className = `task-item fade-in ${task.done ? "completed" : ""}`
   taskDiv.dataset.taskId = task.id
 
   taskDiv.innerHTML = `
         <input 
             type="checkbox" 
-            class="task-checkbox form-check-input" 
+            class="task-checkbox" 
             ${task.done ? "checked" : ""}
             onchange="toggleTask(${task.id}, this.checked)"
         >
         <span class="task-title">${escapeHtml(task.title)}</span>
-        <button 
-            class="btn-delete ms-auto" 
-            onclick="showDeleteModal(${task.id}, '${escapeHtml(task.title)}')"
-            title="Eliminar tarea"
-        >
-            <i class="fas fa-trash-alt"></i>
-        </button>
+        <div class="task-actions">
+            <button 
+                class="btn-delete" 
+                onclick="showDeleteModal(${task.id}, '${escapeHtml(task.title)}')"
+                title="Eliminar tarea"
+            >
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
     `
 
   return taskDiv
@@ -252,31 +256,16 @@ async function deleteTask(taskId) {
   }
 }
 
-// Actualizar contador de tareas
+// Actualizar contador de tareas con el nuevo diseño
 function updateTaskCount(tasks) {
   const totalTasks = tasks.length
   const completedTasks = tasks.filter((task) => task.done).length
   const pendingTasks = totalTasks - completedTasks
 
-  // Crear o actualizar el contador
-  let countElement = document.getElementById("taskCount")
-  if (!countElement) {
-    countElement = document.createElement("div")
-    countElement.id = "taskCount"
-    countElement.className = "task-count text-center"
-    tasksList.appendChild(countElement)
-  }
-
-  countElement.innerHTML = `
-        <small class="text-muted">
-            <i class="fas fa-list-ul me-1"></i>
-            Total: ${totalTasks} | 
-            <i class="fas fa-check-circle me-1 text-success"></i>
-            Completadas: ${completedTasks} | 
-            <i class="fas fa-clock me-1 text-warning"></i>
-            Pendientes: ${pendingTasks}
-        </small>
-    `
+  // Actualizar los elementos de estadísticas
+  document.getElementById("totalTasks").textContent = totalTasks
+  document.getElementById("completedTasks").textContent = completedTasks
+  document.getElementById("pendingTasks").textContent = pendingTasks
 }
 
 // Ocultar mensajes de error
