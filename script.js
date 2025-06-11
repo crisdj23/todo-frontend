@@ -1,5 +1,5 @@
 // Configuración de la API
-const API_BASE_URL = "https://todo-api-jtw8.onrender.com" // Cambia esto por tu URL de Render
+const API_BASE_URL = "https://todo-api-jtw8.onrender.com" 
 
 // Elementos del DOM
 const taskForm = document.getElementById("taskForm")
@@ -8,7 +8,7 @@ const tasksList = document.getElementById("tasksList")
 const loadingSpinner = document.getElementById("loadingSpinner")
 const errorAlert = document.getElementById("errorAlert")
 const errorMessage = document.getElementById("errorMessage")
-const successAlert = document.getElementById("successAlert")
+const successAlert = document.getElementById("successMessage")
 const successMessage = document.getElementById("successMessage")
 const emptyState = document.getElementById("emptyState")
 const deleteModalElement = document.getElementById("deleteModal")
@@ -205,6 +205,9 @@ async function toggleTask(taskId, done) {
         showSuccess("Tarea marcada como pendiente")
       }
     }
+
+    //  Actualizar el contador inmediatamente
+    updateCounterFromDOM()
   } catch (error) {
     console.error("Error toggling task:", error)
     showError("Error al actualizar la tarea.")
@@ -256,7 +259,7 @@ async function deleteTask(taskId) {
   }
 }
 
-// Actualizar contador de tareas con el nuevo diseño
+
 function updateTaskCount(tasks) {
   const totalTasks = tasks.length
   const completedTasks = tasks.filter((task) => task.done).length
@@ -268,7 +271,41 @@ function updateTaskCount(tasks) {
   document.getElementById("pendingTasks").textContent = pendingTasks
 }
 
+// actualizar el contador e en el DOM actual
+function updateCounterFromDOM() {
+  const allTaskElements = document.querySelectorAll(".task-item")
+  const completedTaskElements = document.querySelectorAll(".task-item.completed")
+
+  const totalTasks = allTaskElements.length
+  const completedTasks = completedTaskElements.length
+  const pendingTasks = totalTasks - completedTasks
+
+  // Actualizar los elementos de estadísticas con animación
+  animateCounterUpdate("totalTasks", totalTasks)
+  animateCounterUpdate("completedTasks", completedTasks)
+  animateCounterUpdate("pendingTasks", pendingTasks)
+}
+
+// Función para animar la actualización de los contadores
+function animateCounterUpdate(elementId, newValue) {
+  const element = document.getElementById(elementId)
+  if (element) {
+    // Agregar efecto de pulso
+    element.style.transform = "scale(1.2)"
+    element.style.transition = "transform 0.2s ease"
+
+    // Actualizar el valor
+    element.textContent = newValue
+
+    // Volver al tamaño normal
+    setTimeout(() => {
+      element.style.transform = "scale(1)"
+    }, 200)
+  }
+}
+
 // Ocultar mensajes de error
 function hideError() {
   errorAlert.classList.add("d-none")
 }
+
